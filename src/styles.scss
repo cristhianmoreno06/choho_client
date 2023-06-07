@@ -1,0 +1,57 @@
+.bg-milligram-blue {
+  background-color: #2A2E4F !important;
+}
+
+.bg-milligram-orange {
+  background-color: rgba(199, 52, 52, 0.68) !important;
+}
+
+.border-milligram-orange {
+  border-color: rgba(199, 52, 52, 0.68) !important;
+}
+
+.border-milligram-8 {
+  border-width: 8px !important;
+}
+
+.milligram-text-orange {
+  color: rgba(199, 52, 52, 0.68) !important;
+}
+
+.milligram-text-blue {
+  color: #2A2E4F !important;
+}
+
+.wsp-btn-float {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 200;
+}
+
+.banner-milligram {
+  background-size: cover;
+  min-height: 200px;
+}
+
+.milligram-banner-tittle {
+  font-size: 40px !important;
+}
+
+.milligram-nav-border-bottom {
+  border-bottom: 8px solid rgba(199, 52, 52, 0.68) !important;
+}
+
+.milligram-border-bottom-blue {
+  border-bottom: 3px solid #2A2E4F !important;
+}
+
+.fill-milligram-blue {
+  fill: #2A2E4F;
+}
+
+.navbar-horizontal .navbar-brand img {
+  height: 70px !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,81 @@
+<div class="header bg-milligram-blue pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <label class="h3 my-auto">
+            {{title}}
+          </label>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="submitUserForm" class="g-3">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="" class="form-label">NIT</label>
+                <input type="number"
+                  [class.is-invalid]="submitUserForm.get('nit').invalid && (submitUserForm.get('nit').dirty || submitUserForm.get('nit').touched)"
+                  class="form-control" formControlName="nit">
+                <div
+                  *ngIf="submitUserForm.get('nit').invalid && (submitUserForm.get('nit').dirty || submitUserForm.get('nit').touched)">
+                  <div class="text-danger" *ngIf="submitUserForm.get('nit').errors['required']">
+                    El nit es requerido.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-3">
+                <label for="" class="form-label">Razón Social</label>
+                <input type="text"
+                       [class.is-invalid]="submitUserForm.get('razon_social').invalid && (submitUserForm.get('razon_social').dirty || submitUserForm.get('razon_social').touched)"
+                       class="form-control" formControlName="razon_social">
+                <div
+                  *ngIf="submitUserForm.get('razon_social').invalid && (submitUserForm.get('razon_social').dirty || submitUserForm.get('razon_social').touched)">
+                  <div class="text-danger" *ngIf="submitUserForm.get('razon_social').errors['required']">
+                    la Razón Social es requerida.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="" class="form-label">Tipo</label>
+                <input type="text"
+                  [class.is-invalid]="submitUserForm.get('tipo').invalid && (submitUserForm.get('tipo').dirty || submitUserForm.get('tipo').touched)"
+                  class="form-control" formControlName="tipo">
+                <div
+                  *ngIf="submitUserForm.get('tipo').invalid && (submitUserForm.get('tipo').dirty || submitUserForm.get('tipo').touched)">
+                  <div class="text-danger" *ngIf="submitUserForm.get('tipo').errors['required']">
+                    El tipo es requerido.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="" class="form-label">Estatus</label>
+                <input type="text"
+                       [class.is-invalid]="submitUserForm.get('activo').invalid && (submitUserForm.get('activo').dirty || submitUserForm.get('activo').touched)"
+                       class="form-control" formControlName="activo">
+                <div
+                  *ngIf="submitUserForm.get('activo').invalid && (submitUserForm.get('activo').dirty || submitUserForm.get('activo').touched)">
+                  <div class="text-danger" *ngIf="submitUserForm.get('activo').errors['required']">
+                    El estatus es requerido.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer py-4">
+          <button type="button" class="btn bg-milligram-orange text-white"
+            (click)="createOrUpdateUser()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

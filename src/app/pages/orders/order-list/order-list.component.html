@@ -1,0 +1,51 @@
+<div class="header bg-milligram-blue pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+      </div>
+    </div>
+  </div>
+  <!-- Page content -->
+  <div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <label class="h3 my-auto">
+              Listado de Pedidos
+            </label>
+            <a class="btn btn-success btn-sm float-right" [routerLink]="['registrar_pedido']">Registrar Pedido</a>
+          </div>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th>Número de pedido</th>
+                  <th>Razón social</th>
+                  <th>Vendedor</th>
+                  <th>Nit</th>
+                  <th>Fecha pedido</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let order of orders, let i = index">
+                  <th>{{ order.num_pedido }}</th>
+                  <th>{{ order.razon_social }}</th>
+                  <td>{{ order.vendedor }}</td>
+                  <td>{{ order.nit }}</td>
+                  <td>{{ order.fecha_pedido | date }}</td>
+                  <td>
+                      <span class="btn btn-primary btn-sm" [routerLink]="['editar_pedido', order.id]" type="button">Editar</span>
+                      <span class="btn btn-warning btn-sm" (click)="deleteOrder(order.id, i)" type="button">Eliminar</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer py-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

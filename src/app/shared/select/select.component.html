@@ -1,0 +1,18 @@
+<label class="form-label">{{label}}</label>
+<select
+  class="form-control"
+  [formControl]="formControl"
+  [class.is-invalid]="formControl.touched && formControl.invalid"
+  (change)="selectedItem($event)"
+>
+  <option class="form-control" value="" >Seleccione</option>
+  <option class="form-control" [value]="applyFormat(item)" *ngFor="let item of list">
+    {{item.nombre}}
+  </option>
+</select>
+<div
+  *ngIf="formControl.invalid && (formControl.dirty || formControl.touched)">
+  <div class="text-danger">
+    La campo es requerido.
+  </div>
+</div>

@@ -1,0 +1,121 @@
+<div class="header bg-milligram-blue pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <label class="h3 my-auto">
+            {{title}}
+          </label>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="submitOrderForm" class="g-3">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="" class="form-label">NIT</label>
+                <input type="number"
+                       [class.is-invalid]="submitOrderForm.get('nit').invalid && (submitOrderForm.get('nit').dirty || submitOrderForm.get('nit').touched)"
+                       class="form-control" formControlName="nit">
+                <div
+                  *ngIf="submitOrderForm.get('nit').invalid && (submitOrderForm.get('nit').dirty || submitOrderForm.get('nit').touched)">
+                  <div class="text-danger" *ngIf="submitOrderForm.get('nit').errors['required']">
+                    El nit es requerido.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-3">
+                <label for="" class="form-label">Razón Social</label>
+                <input type="text"
+                       [class.is-invalid]="submitOrderForm.get('razon_social').invalid && (submitOrderForm.get('razon_social').dirty || submitOrderForm.get('razon_social').touched)"
+                       class="form-control" formControlName="razon_social">
+                <div
+                  *ngIf="submitOrderForm.get('razon_social').invalid && (submitOrderForm.get('razon_social').dirty || submitOrderForm.get('razon_social').touched)">
+                  <div class="text-danger" *ngIf="submitOrderForm.get('razon_social').errors['required']">
+                    la Razón Social es requerida.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="" class="form-label">Número de pedido</label>
+                <input type="number"
+                       [class.is-invalid]="submitOrderForm.get('num_pedido').invalid && (submitOrderForm.get('num_pedido').dirty || submitOrderForm.get('num_pedido').touched)"
+                       class="form-control" formControlName="num_pedido">
+                <div
+                  *ngIf="submitOrderForm.get('num_pedido').invalid && (submitOrderForm.get('num_pedido').dirty || submitOrderForm.get('num_pedido').touched)">
+                  <div class="text-danger" *ngIf="submitOrderForm.get('num_pedido').errors['required']">
+                    El Número de pedido es requerido.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                  <app-select
+                    resourceName="departments"
+                    label="Departamento"
+                    formControlName="department"
+                  ></app-select>
+              </div>
+              <div class="col-md-3">
+                <app-select
+                  resourceName="cities"
+                  label="Ciudad"
+                  formControlName="city"
+                  [idParent]="submitOrderForm.get('department').value"
+                ></app-select>
+              </div>
+              <div class="col-md-3">
+                <label for="" class="form-label">Prefijo</label>
+                <input type="text"
+                       [class.is-invalid]="submitOrderForm.get('prefijo').invalid && (submitOrderForm.get('prefijo').dirty || submitOrderForm.get('prefijo').touched)"
+                       class="form-control" formControlName="prefijo">
+                <div
+                  *ngIf="submitOrderForm.get('prefijo').invalid && (submitOrderForm.get('prefijo').dirty || submitOrderForm.get('prefijo').touched)">
+                  <div class="text-danger" *ngIf="submitOrderForm.get('prefijo').errors['required']">
+                    El prefijo es requerido.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="" class="form-label">Vendedor</label>
+                <input type="text"
+                       [class.is-invalid]="submitOrderForm.get('vendedor').invalid && (submitOrderForm.get('vendedor').dirty || submitOrderForm.get('vendedor').touched)"
+                       class="form-control" formControlName="vendedor">
+                <div
+                  *ngIf="submitOrderForm.get('vendedor').invalid && (submitOrderForm.get('vendedor').dirty || submitOrderForm.get('vendedor').touched)">
+                  <div class="text-danger" *ngIf="submitOrderForm.get('vendedor').errors['required']">
+                    El vendedor es requerido.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="" class="form-label">Fecha del pedido</label>
+                <input type="date"
+                       [class.is-invalid]="submitOrderForm.get('fecha_pedido').invalid && (submitOrderForm.get('fecha_pedido').dirty || submitOrderForm.get('fecha_pedido').touched)"
+                       class="form-control" formControlName="fecha_pedido">
+                <div
+                  *ngIf="submitOrderForm.get('fecha_pedido').invalid && (submitOrderForm.get('fecha_pedido').dirty || submitOrderForm.get('fecha_pedido').touched)">
+                  <div class="text-danger" *ngIf="submitOrderForm.get('fecha_pedido').errors['required']">
+                    La Fecha de pedido es requerido.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer py-4">
+          <button type="button" class="btn bg-milligram-orange text-white"
+                  (click)="createOrUpdateOrder()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
