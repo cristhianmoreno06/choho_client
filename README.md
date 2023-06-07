@@ -13,7 +13,7 @@ Antes de instalar el proyecto de Choho, asegúrate de tener instalados los sigui
 
 Sigue estos pasos para instalar y configurar el proyecto Choho localmente:
 
-* Clona el repositorio: `git clone https://github.com/creativetimofficial/argon-dashboard-angular.git`.
+* Clona el repositorio: `https://github.com/cristhianmoreno06/choho_client.git`.
 * Navega al directorio del proyecto: `cd choho_client`.
 * Instala las dependencias del proyecto utilizando npm: `npm install`.
 * Inicia el servidor de desarrollo de Angular: `ng serve`.
